@@ -12,8 +12,8 @@ class OpensslAT10 < Formula
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
-    sha256 "0dd6490fbe1712caf29283b6ddb9d9c5fe849212948604e1e0b82fbf863e35c3" => :catalina
-    sha256 "40be5bdc70a3bb397b1f4f0e71f51e0617491b1b556760a7f20d518cd008e53e" => :big_sur
+    sha256 "3a42b7af5701006f0cd5abec93a7b3cb1c2479bd021bdab1d8fc8edf18532ad2" => :catalina
+    sha256 "a49e7a7ad42a078074f48003ea624cf034b368bb15429f96295514b36a88218a" => :big_sur
   end
 
   keg_only :provided_by_macos,
