@@ -13,6 +13,7 @@ class OpensslAT10 < Formula
     root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
     rebuild 1
     sha256 "bea6b7f9b140a79db87c9d6419c4c52ca5c192494c59bf905306e44c1306d18b" => :catalina
+    sha256 "515d404556781deeba46807a2521be9085e9ffe49599c3ab32f555e2f8c19c8a" => :big_sur
   end
 
   keg_only :provided_by_macos,
