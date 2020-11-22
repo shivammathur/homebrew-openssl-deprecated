@@ -1,0 +1,43 @@
+name: 'Update and Build Formulae'
+on:
+  push:
+  repository_dispatch:
+jobs:
+  supported:
+    if: "!contains(github.event.head_commit.message, 'skip-build')"
+    runs-on: ${{ matrix.os-version }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os-version: ['macos-10.15', 'macos-11.0']
+        openssl-version: ['openssl@1.0']
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: master
+    - name: build
+      id: build
+      run: sh ./.github/scripts/build.sh
+      env:        
+        GITHUB_ACTIONS: true        
+        GITHUB_MESSAGE: ${{ github.event.head_commit.message }}
+        GITHUB_REPOSITORY: ${{ github.repository }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GIT_URL: ${{ github.event.repository.html_url }}
+        HOMEBREW_BINTRAY_URL: https://dl.bintray.com/${{ github.repository_owner }}/openssl-deprecated
+        HOMEBREW_BINTRAY_USER: ${{ github.repository_owner }}
+        HOMEBREW_BINTRAY_REPO: openssl-deprecated
+        HOMEBREW_BINTRAY_EMAIL: ${{ secrets.email }}
+        HOMEBREW_BINTRAY_KEY: ${{ secrets.bintray_key }}
+        HOMEBREW_NO_ANALYTICS: 1
+        HOMEBREW_NO_AUTO_UPDATE: 1
+        HOMEBREW_NO_INSTALL_CLEANUP: 1        
+        OPENSSL_VERSION: ${{ matrix.openssl-version }}
+        DARWIN_VERSION: ${{ matrix.os-version }}
+      continue-on-error: true
+    - name: Upload Artifact
+      if: steps.build.outputs.build == 'true'
+      uses: actions/upload-artifact@v2
+      with:
+        name: ${{ matrix.openssl-version }}
+        path: ./*.tar.gz
