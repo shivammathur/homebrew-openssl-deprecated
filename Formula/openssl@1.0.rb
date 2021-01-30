@@ -11,13 +11,14 @@ class OpensslAT10 < Formula
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
-    rebuild 1
-    sha256 "bea6b7f9b140a79db87c9d6419c4c52ca5c192494c59bf905306e44c1306d18b" => :catalina
-    sha256 "515d404556781deeba46807a2521be9085e9ffe49599c3ab32f555e2f8c19c8a" => :big_sur
   end
 
-  keg_only :provided_by_macos,
-    "Apple has deprecated use of OpenSSL in favor of its own TLS and crypto libraries"
+  keg_only :shadowed_by_macos, "macOS provides LibreSSL"
+
+  patch do
+    url "https://gist.githubusercontent.com/shivammathur/87c2f8adc51a96a36a0ae5f5f6762f50/raw/1f3c84f2de3c9ab90a3bfc325fb0c5dd56047434/openssl-1.0.2u-arm64.patch"
+    sha256 "3689b55a0775e1d8651242068fe9a568b1d0c102202428da344be64421296432"
+  end
 
   def install
     # OpenSSL will prefer the PERL environment variable if set over $PATH
@@ -35,7 +36,7 @@ class OpensslAT10 < Formula
       no-zlib
       shared
       enable-cms
-      darwin64-x86_64-cc
+      darwin64-#{Hardware::CPU.arch}-cc
       enable-ec_nistp_64_gcc_128
     ]
     system "perl", "./Configure", *args

@@ -1,6 +1,6 @@
 # shivammathur/homebrew-openssl-deprecated
 
-![Build Formula](https://github.com/shivammathur/homebrew-openssl-deprecated/workflows/Build%20Formula/badge.svg)
+![Build Formula](https://github.com/shivammathur/homebrew-openssl-deprecated/workflows/Dispatch%20build%20bottle/badge.svg)
 ![License](https://img.shields.io/badge/license-MIT-428f7e.svg?logo=open%20source%20initiative&logoColor=white&labelColor=555555)
 ![OpenSSL](https://img.shields.io/badge/OpenSSL-1.0.2u-555555.svg?logo=openssl&logoColor=771113&labelColor=white)
 
