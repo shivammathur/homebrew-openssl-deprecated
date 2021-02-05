@@ -1,4 +1,7 @@
-class ImapUw < Formula
+# typed: false
+# frozen_string_literal: true
+
+class ImapUwAT10 < Formula
   desc "University of Washington IMAP toolkit"
   homepage "https://web.archive.org/web/20191028114408/https://www.washington.edu/imap/"
   url "https://mirrorservice.org/sites/ftp.cac.washington.edu/imap/imap-2007f.tar.gz"
@@ -7,9 +10,6 @@ class ImapUw < Formula
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
-    sha256 cellar: :any, big_sur: "c39ba20a6e1829f78b6fdab27757d00179a8b5b39ff1b47f89cd4dbbdfb715ed"
-    sha256 cellar: :any, arm64_big_sur: "70b7935eabda6d1434d74267512b00c70aa356f08908fac183ce961ba6bd6fff"
-    sha256 cellar: :any, catalina: "54e9398cace616d17530cd4ab7aff3e2f94474bec05799826301ae378601bbd5"
   end
 
   depends_on "shivammathur/openssl-deprecated/openssl@1.0"

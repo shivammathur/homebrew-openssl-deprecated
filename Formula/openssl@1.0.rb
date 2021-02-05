@@ -12,9 +12,9 @@ class OpensslAT10 < Formula
   bottle do
     root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
     rebuild 2
-    sha256 big_sur: "4210a8c00f606e2a3a67d576d8ecdb5b6620f9d58d303b530b576f77025842f1"
     sha256 arm64_big_sur: "85213d961dc11f6cf2967f8a3da88f0a0f7b551eeed68375149262c7ff3ee109"
-    sha256 catalina: "51c46429472c405f0e9e367007735e7b8eeb13ee8b64118c10cf37d13674f45d"
+    sha256 big_sur:       "4210a8c00f606e2a3a67d576d8ecdb5b6620f9d58d303b530b576f77025842f1"
+    sha256 catalina:      "51c46429472c405f0e9e367007735e7b8eeb13ee8b64118c10cf37d13674f45d"
   end
 
   keg_only :shadowed_by_macos, "macOS provides LibreSSL"

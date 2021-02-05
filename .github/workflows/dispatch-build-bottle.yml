@@ -22,7 +22,7 @@ jobs:
     timeout-minutes: 300
     strategy:
       matrix:
-        os: ['macos-10.15', 'macos-11.0', 'macos-11-arm']
+        os: ['macos-10.15', 'macos-11-arm']
     env:
       PATH: '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin'
       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -139,6 +139,21 @@ jobs:
         run: |
           git config --local user.email homebrew-test-bot@lists.sfconservancy.org
           git config --local user.name BrewTestBot
+
+      - name: Create package
+        run: |
+          formula=${{github.event.inputs.formula}}
+          curl \
+          --user "${{github.repository_owner}}":"${{secrets.HOMEBREW_BINTRAY_KEY}}" \
+          --header "Content-Type: application/json" \
+          --data " \
+          {\"name\": \"${formula//@/:}\", \
+           \"vcs_url\": \"${{ github.repository }}\", \
+           \"licenses\": [\"MIT\"], \
+           \"public_download_numbers\": true, \
+           \"public_stats\": true \
+          }" \
+          https://api.bintray.com/packages/${{github.repository_owner}}/openssl-deprecated >/dev/null 2>&1 || true
 
       - name: Upload and publish bottles on Bintray
         env:
