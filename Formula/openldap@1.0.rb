@@ -23,11 +23,6 @@ class OpenldapAT10 < Formula
 
   depends_on "shivammathur/openssl-deprecated/openssl@1.0"
 
-  on_linux do
-    depends_on "groff" => :build
-    depends_on "util-linux"
-  end
-
   def install
     args = %W[
       --disable-dependency-tracking

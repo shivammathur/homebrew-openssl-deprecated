@@ -32,10 +32,6 @@ class FreetdsAT10 < Formula
   depends_on "shivammathur/openssl-deprecated/openssl@1.0"
   depends_on "unixodbc"
 
-  on_linux do
-    depends_on "readline"
-  end
-
   def install
     args = %W[
       --prefix=#{prefix}

@@ -26,10 +26,6 @@ class LibpqAT10 < Formula
   depends_on "shivammathur/openssl-deprecated/krb5@1.0"
   depends_on "shivammathur/openssl-deprecated/openssl@1.0"
 
-  on_linux do
-    depends_on "readline"
-  end
-
   def install
     system "./configure", "--disable-debug",
                           "--prefix=#{prefix}",

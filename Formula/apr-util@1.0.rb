@@ -27,11 +27,6 @@ class AprUtilAT10 < Formula
   uses_from_macos "expat"
   uses_from_macos "sqlite"
 
-  on_linux do
-    depends_on "mawk"
-    depends_on "unixodbc"
-  end
-
   def install
     # Install in libexec otherwise it pollutes lib with a .exp file.
     system "./configure", "--prefix=#{libexec}",

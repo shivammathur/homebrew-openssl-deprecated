@@ -66,9 +66,6 @@ class Libxml2AT10 < Formula
     on_macos do
       return MacOS.sdk_path/"usr/include"
     end
-    on_linux do
-      return HOMEBREW_PREFIX/"include"
-    end
   end
 
   def install

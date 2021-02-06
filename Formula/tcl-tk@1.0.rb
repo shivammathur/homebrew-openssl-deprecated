@@ -23,13 +23,6 @@ class TclTkAT10 < Formula
 
   uses_from_macos "zlib"
 
-  on_linux do
-    depends_on "freetype" => :build
-    depends_on "pkg-config" => :build
-    depends_on "libx11"
-    depends_on "libxext"
-  end
-
   resource "critcl" do
     url "https://github.com/andreas-kupries/critcl/archive/3.1.18.1.tar.gz"
     sha256 "51bc4b099ecf59ba3bada874fc8e1611279dfd30ad4d4074257084763c49fd86"
@@ -133,11 +126,6 @@ class TclTkAT10 < Formula
 
   test do
     assert_equal "honk", pipe_output("#{bin}/tclsh", "puts honk\n").chomp
-
-    on_linux do
-      # Fails with: no display name and no $DISPLAY environment variable
-      return if ENV["CI"]
-    end
 
     test_itk = <<~EOS
       # Check that Itcl and Itk load, and that we can define, instantiate,

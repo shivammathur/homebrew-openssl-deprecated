@@ -69,10 +69,6 @@ class CurlAT10 < Formula
       args << "--with-gssapi"
     end
 
-    on_linux do
-      args << "--with-gssapi=#{Formula["krb5@1.0"].opt_prefix}"
-    end
-
     system "./configure", *args
     system "make", "install"
     system "make", "install", "-C", "scripts"

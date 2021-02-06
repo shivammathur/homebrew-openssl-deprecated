@@ -86,9 +86,6 @@ class PythonAT10 < Formula
     on_macos do
       return prefix/"Frameworks/Python.framework/Versions/#{version.major_minor}/lib/python#{version.major_minor}"
     end
-    on_linux do
-      return prefix/"lib/python#{version.major_minor}"
-    end
   end
 
   def site_packages_cellar
@@ -130,12 +127,6 @@ class PythonAT10 < Formula
       # Override LLVM_AR to be plain old system ar.
       # https://bugs.python.org/issue43109
       args << "LLVM_AR=/usr/bin/ar"
-    end
-    on_linux do
-      args << "--enable-shared"
-      # Required for the _ctypes module
-      # see https://github.com/Linuxbrew/homebrew-core/pull/1007#issuecomment-252421573
-      args << "--with-system-ffi"
     end
 
     # Python re-uses flags when building native modules.

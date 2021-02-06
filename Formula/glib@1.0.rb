@@ -26,10 +26,6 @@ class GlibAT10 < Formula
   depends_on "pcre"
   depends_on "shivammathur/openssl-deprecated/python@1.0"
 
-  on_linux do
-    depends_on "util-linux"
-  end
-
   # https://bugzilla.gnome.org/show_bug.cgi?id=673135 Resolved as wontfix,
   # but needed to fix an assumption about the location of the d-bus machine
   # id file.
