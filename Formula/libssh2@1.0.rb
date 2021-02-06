@@ -15,6 +15,8 @@ class Libssh2AT10 < Formula
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    sha256 cellar: :any, arm64_big_sur: "feacc14891318ca825e5ed2eaf24b303b63bf705dee917e5ee868fb36160fb3a"
+    sha256 cellar: :any, catalina:      "32758f60b650ce0f6c81b36dc0b04ab40e6734d3448c552a00d9e84314f6eea5"
   end
 
   head do
