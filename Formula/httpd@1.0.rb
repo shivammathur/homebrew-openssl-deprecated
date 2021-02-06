@@ -111,6 +111,7 @@ class HttpdAT10 < Formula
       #{bin}/apxs
     ] do |s|
       s.gsub! "httpd@1.0", "httpd\\@1.0"
+      s.gsub! "perl -w", "perl -w -X"
     end
 
     inreplace "#{lib}/httpd/build/config_vars.mk" do |s|
