@@ -56,6 +56,7 @@ class PythonAT10 < Formula
   link_overwrite "bin/pip3"
   link_overwrite "bin/pydoc3"
   link_overwrite "bin/python3"
+  link_overwrite "bin/python1.0"
   link_overwrite "bin/python3-config"
   link_overwrite "bin/wheel3"
   link_overwrite "share/man/man1/python3.1"
