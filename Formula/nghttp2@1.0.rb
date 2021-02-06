@@ -10,6 +10,8 @@ class Nghttp2AT10 < Formula
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    sha256 arm64_big_sur: "e8e17d144252b5ec2975395b9a03158508dee027f04e040b5fc24a9dbf15348a"
+    sha256 catalina:      "9d93add5163fb283e553484b13d72b5dedafe384fa5d56cd806533d517439149"
   end
 
   head do
