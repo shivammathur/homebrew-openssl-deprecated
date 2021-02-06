@@ -16,6 +16,8 @@ class CmakeAT10 < Formula
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur: "f33cbd98ea6a12b6a3002276403e934eedfd5d03b267545092ae2678d427ae7b"
+    sha256 cellar: :any_skip_relocation, catalina:      "fe8292077972cdb9d53d72d770af7d3b2ccd92a9245867d6e3285fc8e431abfe"
   end
 
   depends_on "shivammathur/openssl-deprecated/sphinx-doc@1.0" => :build
