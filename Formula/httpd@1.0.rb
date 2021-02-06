@@ -18,9 +18,9 @@ class HttpdAT10 < Formula
   end
 
   depends_on "apr"
-  depends_on "brotli"
   depends_on "pcre"
   depends_on "shivammathur/openssl-deprecated/apr-util@1.0"
+  depends_on "shivammathur/openssl-deprecated/brotli@1.0"
   depends_on "shivammathur/openssl-deprecated/nghttp2@1.0"
   depends_on "shivammathur/openssl-deprecated/openssl@1.0"
 
@@ -66,7 +66,7 @@ class HttpdAT10 < Formula
                           "--with-sslport=8443",
                           "--with-apr=#{Formula["apr"].opt_prefix}",
                           "--with-apr-util=#{Formula["apr-util@1.0"].opt_prefix}",
-                          "--with-brotli=#{Formula["brotli"].opt_prefix}",
+                          "--with-brotli=#{Formula["brotli@1.0"].opt_prefix}",
                           "--with-libxml2=#{MacOS.sdk_path_if_needed}/usr",
                           "--with-mpm=prefork",
                           "--with-nghttp2=#{Formula["nghttp2@1.0"].opt_prefix}",
