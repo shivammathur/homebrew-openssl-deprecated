@@ -157,8 +157,8 @@ class PythonAT10 < Formula
     # Avoid linking to libgcc https://mail.python.org/pipermail/python-dev/2012-February/116205.html
     args << "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"
 
-    args << "--with-tcltk-includes=-I#{Formula["tcl-tk"].opt_include}"
-    args << "--with-tcltk-libs=-L#{Formula["tcl-tk"].opt_lib} -ltcl8.6 -ltk8.6"
+    args << "--with-tcltk-includes=-I#{Formula["tcl-tk@1.0"].opt_include}"
+    args << "--with-tcltk-libs=-L#{Formula["tcl-tk@1.0"].opt_lib} -ltcl8.6 -ltk8.6"
 
     # We want our readline! This is just to outsmart the detection code,
     # superenv makes cc always find includes/libs!
@@ -239,8 +239,6 @@ class PythonAT10 < Formula
       "idle"          => "idle3",
       "pydoc"         => "pydoc3",
       "python"        => "python3",
-      "python1"       => "python3",
-      "python1.0"     => "python3",
       "python-config" => "python3-config",
     }.each do |unversioned_name, versioned_name|
       (libexec/"bin").install_symlink (bin/versioned_name).realpath => unversioned_name
@@ -329,6 +327,7 @@ class PythonAT10 < Formula
     end
 
     # post_install happens after link
+    (HOMEBREW_PREFIX/"bin").install_symlink (bin/"python3").realpath => "python1.0"
     %W[pip3 wheel3 pip#{version.major_minor} easy_install-#{version.major_minor}].each do |e|
       (HOMEBREW_PREFIX/"bin").install_symlink bin/e
     end
@@ -353,9 +352,9 @@ class PythonAT10 < Formula
 
     # Help distutils find brewed stuff when building extensions
     include_dirs = [HOMEBREW_PREFIX/"include", Formula["openssl@1.0"].opt_include,
-                    Formula["sqlite"].opt_include, Formula["tcl-tk"].opt_include]
+                    Formula["sqlite"].opt_include, Formula["tcl-tk@1.0"].opt_include]
     library_dirs = [HOMEBREW_PREFIX/"lib", Formula["openssl@1.0"].opt_lib,
-                    Formula["sqlite"].opt_lib, Formula["tcl-tk"].opt_lib]
+                    Formula["sqlite"].opt_lib, Formula["tcl-tk@1.0"].opt_lib]
 
     cfg = lib_cellar/"distutils/distutils.cfg"
 
