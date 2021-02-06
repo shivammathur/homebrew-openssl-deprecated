@@ -17,6 +17,8 @@ class Krb5AT10 < Formula
     root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
   end
 
+  keg_only :versioned_formula
+
   depends_on "shivammathur/openssl-deprecated/openssl@1.0"
 
   uses_from_macos "bison"
