@@ -15,6 +15,9 @@ class CurlAT10 < Formula
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    rebuild 1
+    sha256 cellar: :any, arm64_big_sur: "995adf6212170ffcbad6521eac7453ee773d1fc9bf8cf13391f839a0442bc3b2"
+    sha256 cellar: :any, catalina:      "85e7e043d42f927c04344861995f8625ffdb863faf8cba81940086f3bad4ece0"
   end
 
   head do
