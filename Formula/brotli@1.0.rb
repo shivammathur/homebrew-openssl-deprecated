@@ -11,6 +11,8 @@ class BrotliAT10 < Formula
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    sha256 cellar: :any, arm64_big_sur: "ab701c0fcb6c39fe1fcf75ab9e5350c5ac8b40e2a54a55f60fc346d3fb891c0d"
+    sha256 cellar: :any, catalina:      "fcb555bc3c6bf970802f15fdedc51bf8400ca7748021d448b623bc030ac05453"
   end
 
   depends_on "shivammathur/openssl-deprecated/cmake@1.0" => :build
