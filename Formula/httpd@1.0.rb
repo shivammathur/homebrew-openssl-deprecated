@@ -106,11 +106,18 @@ class HttpdAT10 < Formula
       s.gsub! prefix, opt_prefix
     end
 
+    inreplace %W[
+      #{bin}/apxs
+    ] do |s|
+      s.gsub! "httpd@1.0", "httpd\\@1.0"
+    end
+
     inreplace "#{lib}/httpd/build/config_vars.mk" do |s|
       pcre = Formula["pcre"]
       s.gsub! pcre.prefix.realpath, pcre.opt_prefix
       s.gsub! "${prefix}/lib/httpd/modules",
               "#{HOMEBREW_PREFIX}/lib/httpd/modules"
+      s.gsub! "@1.0", "\\@1.0"
     end
   end
 
