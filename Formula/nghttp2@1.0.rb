@@ -23,9 +23,9 @@ class Nghttp2AT10 < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "c-ares"
   depends_on "jemalloc"
   depends_on "libev"
+  depends_on "shivammathur/openssl-deprecated/c-ares@1.0"
   depends_on "shivammathur/openssl-deprecated/libxml2@1.0"
   depends_on "shivammathur/openssl-deprecated/openssl@1.0"
 
