@@ -16,6 +16,8 @@ class GlibAT10 < Formula
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    sha256 arm64_big_sur: "634ce253de867edcd78392c0c502ffdb07ad898363214a670cd5ce6411755525"
+    sha256 catalina:      "17b2a7f0cef7dad0efae046649abb0deedffcc880c4417eeda8c91aa48e18604"
   end
 
   depends_on "pkg-config" => :build
