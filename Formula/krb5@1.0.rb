@@ -15,6 +15,8 @@ class Krb5AT10 < Formula
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    sha256 arm64_big_sur: "63aec955aad49d2bd049b0fe24be25e65f304dc2988b94be987d48c9c74c8eda"
+    sha256 catalina:      "e4ccfad21819eaf768baf6bf97270b31e601023b2c0ba2a48a5b4e9adb542dfd"
   end
 
   keg_only :versioned_formula
