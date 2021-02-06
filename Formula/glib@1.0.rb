@@ -18,9 +18,9 @@ class GlibAT10 < Formula
     root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
   end
 
-  depends_on "meson" => :build
-  depends_on "ninja" => :build
   depends_on "pkg-config" => :build
+  depends_on "shivammathur/openssl-deprecated/meson@1.0" => :build
+  depends_on "shivammathur/openssl-deprecated/ninja@1.0" => :build
   depends_on "gettext"
   depends_on "libffi"
   depends_on "pcre"
