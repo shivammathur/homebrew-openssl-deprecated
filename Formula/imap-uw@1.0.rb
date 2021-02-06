@@ -10,6 +10,8 @@ class ImapUwAT10 < Formula
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    sha256 cellar: :any, arm64_big_sur: "3dde374d4fcca4f83a5b9a8e77e7366a2095ce5b264eff687d32cd346ffb7413"
+    sha256 cellar: :any, catalina:      "1b3bccc1c7cc463ecf8898827c5e9f9dc03ead34e6b55d471fc01758c2e73091"
   end
 
   depends_on "shivammathur/openssl-deprecated/openssl@1.0"
