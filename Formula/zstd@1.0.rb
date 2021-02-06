@@ -8,6 +8,8 @@ class ZstdAT10 < Formula
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    sha256 cellar: :any, arm64_big_sur: "8ad670c1f515a62bfee0ea6f79f84f47742049f7536b9cdec954a6a923d3f85b"
+    sha256 cellar: :any, catalina:      "36becf72894c8ce47baff0b27d633d67268b5431088520966fe6cca2ccaf32d5"
   end
 
   depends_on "shivammathur/openssl-deprecated/cmake@1.0" => :build
