@@ -11,6 +11,8 @@ class GettextAT10 < Formula
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    sha256 arm64_big_sur: "3d898616c8c4896c98af5267856f90b4c6260acec586715f584642a8197992e8"
+    sha256 catalina:      "cfc1de0967de0f8a41cdd81397c51ddf391e609d60c2f5537cf902c7d58bb729"
   end
 
   depends_on "shivammathur/openssl-deprecated/libxml2@1.0"
