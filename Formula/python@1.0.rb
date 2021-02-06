@@ -15,8 +15,6 @@ class PythonAT10 < Formula
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
-    sha256 arm64_big_sur: "d5c9c53e7c179a3f886bd9641c3d35804f6bc8734270563feae0cd461e4e4f2c"
-    sha256 catalina:      "66fb33e24440050134bb404dc38428f31cbd45f1b1e18e88d9c50a3fe7add9db"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -36,8 +34,8 @@ class PythonAT10 < Formula
   depends_on "gdbm"
   depends_on "readline"
   depends_on "shivammathur/openssl-deprecated/openssl@1.0"
+  depends_on "shivammathur/openssl-deprecated/tcl-tk@1.0"
   depends_on "sqlite"
-  depends_on "tcl-tk"
   depends_on "xz"
 
   uses_from_macos "bzip2"
