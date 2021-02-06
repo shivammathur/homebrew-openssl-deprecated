@@ -15,8 +15,9 @@ class HttpdAT10 < Formula
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
-    sha256 arm64_big_sur: "ffa46b4a35e0d6b34387306a31b9d6aa2e6415e69dea4fc9b45a8117acac8c6e"
-    sha256 catalina:      "b452250ac0eb0357d31a9eb95564ef9191d1ab2ccb6bfa39225928c0b275147c"
+    rebuild 1
+    sha256 arm64_big_sur: "e6d539cc430cdbc37c106ebe2116d56d1d65ad1c2cc6eddcc830924163167846"
+    sha256 catalina:      "018c5feb628213cd0757b597b89c1e0d6e4d8659335bf98bfb246d35b9265370"
   end
 
   depends_on "apr"
