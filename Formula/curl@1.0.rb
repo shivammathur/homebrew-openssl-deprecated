@@ -25,6 +25,8 @@ class CurlAT10 < Formula
     depends_on "libtool" => :build
   end
 
+  keg_only :versioned_formula
+
   depends_on "pkg-config" => :build
   depends_on "brotli"
   depends_on "libidn2"
