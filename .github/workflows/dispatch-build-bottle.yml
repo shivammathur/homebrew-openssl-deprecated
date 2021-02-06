@@ -53,7 +53,7 @@ jobs:
         run: |
           mkdir bottles
           cd bottles
-          brew test-bot --only-formulae --root-url=https://dl.bintray.com/${{ github.repository_owner }}/openssl-deprecated ${{ github.repository_owner }}/openssl-deprecated/${{github.event.inputs.formula}}
+          brew test-bot --only-formulae --skip-recursive-dependents --root-url=https://dl.bintray.com/${{ github.repository_owner }}/openssl-deprecated ${{ github.repository_owner }}/openssl-deprecated/${{github.event.inputs.formula}}
 
       - name: Output brew test-bot --only-formulae failures
         if: always()
