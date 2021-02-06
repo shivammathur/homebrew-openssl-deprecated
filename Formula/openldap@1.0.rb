@@ -15,6 +15,8 @@ class OpenldapAT10 < Formula
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    sha256 arm64_big_sur: "362878022dcda1b9b4bfbc3b2c5972e0bc27d2210dc8a59cc3358b548cb43798"
+    sha256 catalina:      "34c92b96ae87e100e99be511fecef7e43a79ef1c509c26976637435dc20e9b5a"
   end
 
   keg_only :versioned_formula
