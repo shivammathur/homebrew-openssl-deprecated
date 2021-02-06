@@ -30,16 +30,16 @@ class CurlAT10 < Formula
   keg_only :versioned_formula
 
   depends_on "pkg-config" => :build
-  depends_on "brotli"
-  depends_on "libidn2"
   depends_on "libmetalink"
+  depends_on "shivammathur/openssl-deprecated/brotli@1.0"
   depends_on "shivammathur/openssl-deprecated/krb5@1.0"
+  depends_on "shivammathur/openssl-deprecated/libidn2@1.0"
   depends_on "shivammathur/openssl-deprecated/libssh2@1.0"
   depends_on "shivammathur/openssl-deprecated/nghttp2@1.0"
   depends_on "shivammathur/openssl-deprecated/openldap@1.0"
   depends_on "shivammathur/openssl-deprecated/openssl@1.0"
   depends_on "shivammathur/openssl-deprecated/rtmpdump@1.0"
-  depends_on "zstd"
+  depends_on "shivammathur/openssl-deprecated/zstd@1.0"
 
   uses_from_macos "zlib"
 

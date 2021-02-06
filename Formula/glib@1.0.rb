@@ -19,9 +19,9 @@ class GlibAT10 < Formula
   end
 
   depends_on "pkg-config" => :build
+  depends_on "shivammathur/openssl-deprecated/gettext@1.0" => :build
   depends_on "shivammathur/openssl-deprecated/meson@1.0" => :build
   depends_on "shivammathur/openssl-deprecated/ninja@1.0" => :build
-  depends_on "gettext"
   depends_on "libffi"
   depends_on "pcre"
   depends_on "shivammathur/openssl-deprecated/python@1.0"
@@ -63,7 +63,7 @@ class GlibAT10 < Formula
 
     # `pkg-config --libs glib-2.0` includes -lintl, and gettext itself does not
     # have a pkgconfig file, so we add gettext lib and include paths here.
-    gettext = Formula["gettext"].opt_prefix
+    gettext = Formula["gettext@1.0"].opt_prefix
     inreplace lib+"pkgconfig/glib-2.0.pc" do |s|
       s.gsub! "Libs: -L${libdir} -lglib-2.0 -lintl",
               "Libs: -L${libdir} -lglib-2.0 -L#{gettext}/lib -lintl"
