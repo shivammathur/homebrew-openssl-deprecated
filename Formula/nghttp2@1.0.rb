@@ -26,9 +26,9 @@ class Nghttp2AT10 < Formula
   depends_on "c-ares"
   depends_on "jemalloc"
   depends_on "libev"
+  depends_on "shivammathur/openssl-deprecated/libxml2@1.0"
   depends_on "shivammathur/openssl-deprecated/openssl@1.0"
 
-  uses_from_macos "libxml2"
   uses_from_macos "zlib"
 
   on_linux do
