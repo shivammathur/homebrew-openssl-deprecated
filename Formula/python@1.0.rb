@@ -15,6 +15,9 @@ class PythonAT10 < Formula
 
   bottle do
     root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    rebuild 1
+    sha256 arm64_big_sur: "7c89a483b72ba4d9e482f8371e0341ea99aa110fce1fe341b8146a034f69188f"
+    sha256 catalina:      "78ea06ad8e25cd814691485aa61c990dca055aab0ba92532b482a023eb0be741"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
