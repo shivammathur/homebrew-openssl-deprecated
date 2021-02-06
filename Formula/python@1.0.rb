@@ -239,6 +239,8 @@ class PythonAT10 < Formula
       "idle"          => "idle3",
       "pydoc"         => "pydoc3",
       "python"        => "python3",
+      "python1"       => "python3",
+      "python1.0"     => "python3",
       "python-config" => "python3-config",
     }.each do |unversioned_name, versioned_name|
       (libexec/"bin").install_symlink (bin/versioned_name).realpath => unversioned_name
