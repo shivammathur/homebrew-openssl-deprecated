@@ -19,11 +19,11 @@ class GlibAT10 < Formula
   end
 
   depends_on "pkg-config" => :build
-  depends_on "shivammathur/openssl-deprecated/gettext@1.0" => :build
   depends_on "shivammathur/openssl-deprecated/meson@1.0" => :build
   depends_on "shivammathur/openssl-deprecated/ninja@1.0" => :build
   depends_on "libffi"
   depends_on "pcre"
+  depends_on "shivammathur/openssl-deprecated/gettext@1.0"
   depends_on "shivammathur/openssl-deprecated/python@1.0"
 
   # https://bugzilla.gnome.org/show_bug.cgi?id=673135 Resolved as wontfix,
@@ -32,6 +32,10 @@ class GlibAT10 < Formula
   patch do
     url "https://raw.githubusercontent.com/Homebrew/formula-patches/6164294a75541c278f3863b111791376caa3ad26/glib/hardcoded-paths.diff"
     sha256 "a57fec9e85758896ff5ec1ad483050651b59b7b77e0217459ea650704b7d422b"
+  end
+
+  def detected_python_shebang(formula = self)
+    python_shebang_rewrite_info(Formula["python@1.0"].opt_bin/"python3")
   end
 
   def install
