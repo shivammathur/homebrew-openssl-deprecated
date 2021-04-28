@@ -14,7 +14,7 @@ class LibpqAT10 < Formula
   end
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    root_url "https://ghcr.io/v2/shivammathur/openssl-deprecated"
     sha256 arm64_big_sur: "c40ad8897450d905af89bc576875acacb86210e83f34d7963492bded3719c701"
     sha256 catalina:      "a1fc37e83d69c2f0435a09862281477b3b74b93b388a99bebc3d3d983775a00f"
   end

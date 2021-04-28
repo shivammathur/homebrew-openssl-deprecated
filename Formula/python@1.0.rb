@@ -14,7 +14,7 @@ class PythonAT10 < Formula
   end
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    root_url "https://ghcr.io/v2/shivammathur/openssl-deprecated"
     rebuild 2
     sha256 arm64_big_sur: "383436e1bc1d76ffb2555f89537bcebc0a5980506cdc58ba96bee286e14f2f88"
     sha256 catalina:      "c9eb02bb7b12f1e0ffa0a8c9cf4f98cb8b41363f499a11d48cdf79517129e0cb"

@@ -16,7 +16,7 @@ class RtmpdumpAT10 < Formula
   end
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    root_url "https://ghcr.io/v2/shivammathur/openssl-deprecated"
     sha256 cellar: :any, arm64_big_sur: "26366ff881eb7788147f201c4a151e600d97a134b8b454b2965a08bf6bb84d83"
     sha256 cellar: :any, catalina:      "49fc09ad3fd08d55a0c185404e80e95fec9f8c97021051a6e5a8b5ab609be412"
   end

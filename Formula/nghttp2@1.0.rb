@@ -9,7 +9,7 @@ class Nghttp2AT10 < Formula
   license "MIT"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    root_url "https://ghcr.io/v2/shivammathur/openssl-deprecated"
     rebuild 1
     sha256 arm64_big_sur: "e09b4b90dd366e1a29519055fb038914d52a1f8c044342430b06925863c02759"
     sha256 catalina:      "d829a06851811440248b80207a7bd1dcc0a614bb7429dc0542df49d7a485ec6a"

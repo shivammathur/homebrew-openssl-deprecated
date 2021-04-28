@@ -15,7 +15,7 @@ class Libidn2AT10 < Formula
   end
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    root_url "https://ghcr.io/v2/shivammathur/openssl-deprecated"
     sha256 arm64_big_sur: "614d03fbfc94cee5258cb4c53ea7a3a56c02936ec3d54e589cc2f9f4e81f8a22"
     sha256 catalina:      "ac98b14bb654c60d909d829d257d0bf36dd6007372e55e4f116e23670e72aa70"
   end

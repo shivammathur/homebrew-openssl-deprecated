@@ -15,7 +15,7 @@ class CAresAT10 < Formula
   end
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    root_url "https://ghcr.io/v2/shivammathur/openssl-deprecated"
     sha256 cellar: :any, arm64_big_sur: "dcf007a6b30fbe36efbb8751fcb85c6477dee3892e6bcedfc78dd722e2b5940f"
     sha256 cellar: :any, catalina:      "eda0cfc58affaa69e860c2820fca74dd2687205edbb9ccd94b5d58c32483b7f0"
   end

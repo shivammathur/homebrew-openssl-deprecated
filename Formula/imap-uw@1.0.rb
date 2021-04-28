@@ -9,7 +9,7 @@ class ImapUwAT10 < Formula
   sha256 "53e15a2b5c1bc80161d42e9f69792a3fa18332b7b771910131004eb520004a28"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    root_url "https://ghcr.io/v2/shivammathur/openssl-deprecated"
     sha256 cellar: :any, arm64_big_sur: "3dde374d4fcca4f83a5b9a8e77e7366a2095ce5b264eff687d32cd346ffb7413"
     sha256 cellar: :any, catalina:      "1b3bccc1c7cc463ecf8898827c5e9f9dc03ead34e6b55d471fc01758c2e73091"
   end

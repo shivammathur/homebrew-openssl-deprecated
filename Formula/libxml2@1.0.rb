@@ -15,7 +15,7 @@ class Libxml2AT10 < Formula
   end
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    root_url "https://ghcr.io/v2/shivammathur/openssl-deprecated"
     sha256 cellar: :any, arm64_big_sur: "393455163eeb1431662cdb28b0b181f673c34e58b4191286d780eb562343fe1d"
     sha256 cellar: :any, catalina:      "16ce99929a5a78eeecf976dbfbc43d4ccfb0391769748d249f681c4db4765daf"
   end

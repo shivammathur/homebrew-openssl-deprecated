@@ -12,7 +12,7 @@ class TclTkAT10 < Formula
   end
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    root_url "https://ghcr.io/v2/shivammathur/openssl-deprecated"
     sha256 arm64_big_sur: "7e9fae3b42d07042daa7fc6931c84bbdbe6bfcc3d0c37543164b79e274b89140"
     sha256 catalina:      "02f9eb900c6ba0f94a04b89854ee587d2873f5ad39063cad79238663afa6072c"
   end

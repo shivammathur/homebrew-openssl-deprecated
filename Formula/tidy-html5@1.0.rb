@@ -15,7 +15,7 @@ class TidyHtml5AT10 < Formula
   end
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    root_url "https://ghcr.io/v2/shivammathur/openssl-deprecated"
     sha256 cellar: :any, arm64_big_sur: "d312348072486539f128d2843550b01d54adb6d0295f4fd3606740e4c1021dc2"
     sha256 cellar: :any, catalina:      "390fb4a52d8fb00979fcba4768923bf51aea362e92fe279455010806e790b4a4"
   end

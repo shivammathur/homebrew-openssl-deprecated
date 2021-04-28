@@ -14,7 +14,7 @@ class FreetdsAT10 < Formula
   end
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    root_url "https://ghcr.io/v2/shivammathur/openssl-deprecated"
     sha256 arm64_big_sur: "48c0b35003657c875257a725909ec9567080361b9d71664e892c02ac948ce362"
     sha256 catalina:      "2cf454e6cffc75596684069f24ca30830db1c2dfcb78f6401133aa1bfe6cd8b1"
   end

@@ -7,7 +7,7 @@ class ZstdAT10 < Formula
   license "BSD-3-Clause"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    root_url "https://ghcr.io/v2/shivammathur/openssl-deprecated"
     sha256 cellar: :any, arm64_big_sur: "8ad670c1f515a62bfee0ea6f79f84f47742049f7536b9cdec954a6a923d3f85b"
     sha256 cellar: :any, catalina:      "36becf72894c8ce47baff0b27d633d67268b5431088520966fe6cca2ccaf32d5"
   end

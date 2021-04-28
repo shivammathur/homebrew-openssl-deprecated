@@ -10,7 +10,7 @@ class MesonAT10 < Formula
   head "https://github.com/mesonbuild/meson.git"
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    root_url "https://ghcr.io/v2/shivammathur/openssl-deprecated"
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "48bdf17986a783a0b6cdf82788623b104257c9345544f94feacf1f50a73287ac"
     sha256 cellar: :any_skip_relocation, catalina:      "52e353f346277abbe36cbb048491827cbced318e6caa8c262ef2f4af35e506f5"
   end

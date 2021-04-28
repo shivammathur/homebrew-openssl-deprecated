@@ -1,4 +1,4 @@
-name: Dispatch build bottle
+name: Dispatch rebottle
 on:
   workflow_dispatch:
     inputs:
@@ -9,7 +9,7 @@ on:
         description: Issue number, where comment on failure would be posted
         required: false
       upload:
-        description: Whether to upload built bottles to Bintray or not
+        description: Whether to upload built bottles or not
         required: false
 env:
   HOMEBREW_DEVELOPER: 1
@@ -22,7 +22,7 @@ jobs:
     timeout-minutes: 300
     strategy:
       matrix:
-        os: ['macos-10.15', 'macos-11-arm']
+        os: ['macos-10.15', 'macos-11.0', 'macos-11-arm']
     env:
       PATH: '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin'
       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -53,7 +53,7 @@ jobs:
         run: |
           mkdir bottles
           cd bottles
-          brew test-bot --only-formulae --skip-recursive-dependents --root-url=https://dl.bintray.com/${{ github.repository_owner }}/openssl-deprecated ${{ github.repository_owner }}/openssl-deprecated/${{github.event.inputs.formula}}
+          brew test-bot --only-formulae --root-url="https://ghcr.io/v2/${{ github.repository_owner }}/openssl-deprecated" ${{ github.repository_owner }}/php/${{github.event.inputs.formula}}
 
       - name: Output brew test-bot --only-formulae failures
         if: always()
@@ -137,32 +137,16 @@ jobs:
 
       - name: Setup git
         run: |
-          git config --local user.email homebrew-test-bot@lists.sfconservancy.org
+          git config --local user.email 1589480+BrewTestBot@users.noreply.github.com
           git config --local user.name BrewTestBot
 
-      - name: Create package
-        run: |
-          formula=${{github.event.inputs.formula}}
-          curl \
-          --user "${{github.repository_owner}}":"${{secrets.HOMEBREW_BINTRAY_KEY}}" \
-          --header "Content-Type: application/json" \
-          --data " \
-          {\"name\": \"${formula//@/:}\", \
-           \"vcs_url\": \"${{ github.repository }}\", \
-           \"licenses\": [\"MIT\"], \
-           \"public_download_numbers\": true, \
-           \"public_stats\": true \
-          }" \
-          https://api.bintray.com/packages/${{github.repository_owner}}/openssl-deprecated >/dev/null 2>&1 || true
-
-      - name: Upload and publish bottles on Bintray
+      - name: Upload and publish bottles to GitHub Packages
         env:
-          HOMEBREW_GITHUB_API_TOKEN: ${{secrets.HOMEBREW_GITHUB_API_TOKEN}}
-          HOMEBREW_BINTRAY_USER: ${{ github.repository_owner }}
-          HOMEBREW_BINTRAY_KEY: ${{secrets.HOMEBREW_BINTRAY_KEY}}
+          HOMEBREW_GITHUB_PACKAGES_USER: ${{ github.repository_owner }}
+          HOMEBREW_GITHUB_PACKAGES_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
           cd ~/bottles
-          brew pr-upload --verbose --bintray-org=${{ github.repository_owner }} --root-url=https://dl.bintray.com/${{ github.repository_owner }}/openssl-deprecated
+          brew pr-upload --verbose --github-org=${{ github.repository_owner }} --root-url="https://ghcr.io/v2/${{ github.repository_owner }}/openssl-deprecated"
 
       - name: Push commits
         uses: Homebrew/actions/git-try-push@master

@@ -15,7 +15,7 @@ class SphinxDocAT10 < Formula
   end
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    root_url "https://ghcr.io/v2/shivammathur/openssl-deprecated"
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "b69406dfaba49fc7c2d4dd14ed900bfb0454aeeb3c0198d53a5bab5ce7e6ed91"
     sha256 cellar: :any_skip_relocation, catalina:      "52fc45361ecb4e2936f5d6fa0c9049d3f73dcd74060bfbe9563c92dce74e07c2"
   end

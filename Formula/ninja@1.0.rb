@@ -15,7 +15,7 @@ class NinjaAT10 < Formula
   end
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    root_url "https://ghcr.io/v2/shivammathur/openssl-deprecated"
     sha256 cellar: :any_skip_relocation, arm64_big_sur: "6f872ccc3d6d115b4f5bb164151f3112fcd1fe360c725f3c2d73273b2507480c"
     sha256 cellar: :any_skip_relocation, catalina:      "d613e7dc185791107f48441e2717458bcd25d053bd601c2a439a74194d0e72f7"
   end

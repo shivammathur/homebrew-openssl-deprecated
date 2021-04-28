@@ -17,7 +17,7 @@ class NginxAT10 < Formula
   end
 
   bottle do
-    root_url "https://dl.bintray.com/shivammathur/openssl-deprecated"
+    root_url "https://ghcr.io/v2/shivammathur/openssl-deprecated"
     sha256 arm64_big_sur: "44f7923fe32816f8a598dc0b265ad24c34c843c3dddc4584f65782abd0643bb0"
     sha256 catalina:      "2fafcc41772cfcb6c4c8f29c8f81ba6037150f14935e154729fe51fd2a9903ad"
   end
