@@ -18,21 +18,21 @@ brew install openssl@1.0
 - If you need to have `openssl@1.0` first in your PATH run:
 
 ```bash
-echo 'export PATH="/usr/local/opt/openssl@1.0/bin:$PATH"' >> "$HOME/.bash_profile"
+echo "export PATH=\"$(brew --prefix openssl@1.0)/bin:\$PATH\"" >> "$HOME/.bash_profile"
 source "$HOME/.bash_profile"
 ```
 
 - For compilers to find `openssl@1.0` you may set:
 
 ```bash
-export LDFLAGS="-L/usr/local/opt/openssl@1.0/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl@1.0/include"
+export LDFLAGS="-L$(brew --prefix openssl@1.0)/lib"
+export CPPFLAGS="-I$(brew --prefix openssl@1.0)/include"
 ```
 
 - For `pkg-config` to find `openssl@1.0` you may set:
 
 ```bash
-export PKG_CONFIG_PATH="/usr/local/opt/openssl@1.0/lib/pkgconfig"
+export PKG_CONFIG_PATH="$(brew --prefix openssl@1.0)/lib/pkgconfig"
 ```
 
 ## License
