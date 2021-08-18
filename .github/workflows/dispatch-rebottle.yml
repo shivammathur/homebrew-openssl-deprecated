@@ -22,7 +22,7 @@ jobs:
     timeout-minutes: 300
     strategy:
       matrix:
-        os: ['macos-10.15', 'macos-11.0', 'macos-11-arm']
+        os: ['macos-10.15', 'macos-11', 'macos-11-arm64']
     env:
       PATH: '/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin'
       GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
